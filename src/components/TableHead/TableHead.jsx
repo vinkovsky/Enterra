@@ -3,12 +3,14 @@ import "./TableHead.less";
 
 const TableHead = () => {
   return (
-    <div className="table-head">
-      <span>ID</span>
-      <span>Имя</span>
-      <span>Уровень</span>
-      <span>Онлайн</span>
-    </div>
+    <thead className="table-head">
+      <tr>
+        <th data-sort-type="text">ID</th>
+        <th data-sort-type="numeric">Имя</th>
+        <th data-sort-type="numeric">Уровень</th>
+        <th data-sort-type="numeric">Онлайн</th>
+      </tr>
+    </thead>
   );
 };
 

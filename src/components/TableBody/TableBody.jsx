@@ -2,7 +2,7 @@ import React from "react";
 import "./TableBody.less";
 
 const TableBody = ({ children }) => (
-  <div className="table-body">{children}</div>
+  <tbody className="table-body">{children}</tbody>
 );
 
 export default TableBody;
