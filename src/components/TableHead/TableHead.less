@@ -12,11 +12,26 @@
   th {
     display: table-cell;
     text-align: left;
+    max-width: 100px;
+    overflow: hidden;
+    height: 30px;
     padding: 16px;
     color: #fff;
     position: sticky;
     top: 0px;
     z-index: 2;
-    background-color: #000;
+    background-color: rgb(122, 93, 204);
+    &:hover {
+      &.asc:after {
+        content: "👇";
+        display: inline-block;
+        margin-left: 1em;
+      }
+      &.desc:after {
+        content: "☝️";
+        display: inline-block;
+        margin-left: 1em;
+      }
+    }
   }
 }

@@ -3,20 +3,20 @@ import { AppContext } from "../AppContainer/AppContainer";
 import "./AppHeader.less";
 
 const AppHeader = () => {
-  const [state, setState] = useContext(AppContext);
+  const [store, setStore] = useContext(AppContext);
   const [value, setValue] = useState("");
 
   const onClickHandler = () => {
-    setState({ ...state, current: state.initial });
+    setStore({ ...store, current: store.initial });
   };
 
   const checkboxHandler = ({ target: { checked } }) => {
     const current = checked
-      ? state.current.filter((item) => !item.online)
-      : state.initial;
+      ? [...store.current].filter((item) => !item.online)
+      : store.initial;
 
-    setState({
-      ...state,
+    setStore({
+      ...store,
       current,
     });
   };
@@ -24,12 +24,12 @@ const AppHeader = () => {
   const inputHandler = ({ target: { value } }) => {
     setValue(value);
 
-    const current = [...state.initial].filter((item) =>
+    const current = [...store.initial].filter((item) =>
       item.name.toLowerCase().includes(value)
     );
 
-    setState({
-      ...state,
+    setStore({
+      ...store,
       current,
     });
   };

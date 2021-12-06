@@ -6,10 +6,10 @@ import { players } from "../../config/players";
 export const AppContext = createContext({});
 
 const AppContainer = ({ children }) => {
-  const [state, setState] = useState({ current: players, initial: players });
+  const [store, setStore] = useState({ current: players, initial: players });
 
   return (
-    <AppContext.Provider value={[state, setState]}>
+    <AppContext.Provider value={[store, setStore]}>
       <div className="app-container">{children}</div>
     </AppContext.Provider>
   );
