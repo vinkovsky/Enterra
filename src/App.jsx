@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import {
   AppContainer,
   AppHeader,
@@ -8,20 +8,16 @@ import {
   TableRow,
 } from "./components";
 
-export const AppContext = createContext({});
-
 const App = () => (
-  <AppContext.Provider value={{ arr: [1, 2, 3] }}>
-    <AppContainer>
-      <AppHeader />
-      <TableContainer>
-        <TableHead />
-        <TableBody>
-          <TableRow />
-        </TableBody>
-      </TableContainer>
-    </AppContainer>
-  </AppContext.Provider>
+  <AppContainer>
+    <AppHeader />
+    <TableContainer>
+      <TableHead />
+      <TableBody>
+        <TableRow />
+      </TableBody>
+    </TableContainer>
+  </AppContainer>
 );
 
 export default App;

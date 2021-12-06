@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { players } from "../../config/players";
+import { AppContext } from "../AppContainer/AppContainer";
 import "./TableRow.less";
 
 const TableRow = () => {
-  return players.map(({ id, name, level, online }, i) => (
-    <tr className="table-row" key={name + i}>
+  const [state, setState] = useContext(AppContext);
+
+  const onClickHandler = (id) => {
+    const elem = state.current.filter((item) => item.id === id);
+    const list = state.current.filter((item) => item.id !== id);
+    setState({ ...state, current: list });
+  };
+
+  return state.current.map(({ id, name, level, online }, i) => (
+    <tr className="table-row" key={name + i} onClick={() => onClickHandler(id)}>
       <td>
         <span>{id}</span>
       </td>
