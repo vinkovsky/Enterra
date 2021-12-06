@@ -1,0 +1,26 @@
+.table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #d2d2d2;
+}
+.star {
+  font-size: 30px;
+  text-shadow: 0 0 3px #000;
+  color: #fbf0be;
+  &:after {
+    content: "\2605";
+  }
+}
+.indicator {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  &.online {
+    background-color: #c5c5c5;
+  }
+}

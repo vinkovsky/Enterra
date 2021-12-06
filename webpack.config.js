@@ -26,17 +26,6 @@ module.exports = {
         test: /\.less$/i,
         use: ["style-loader", "css-loader", "less-loader"],
       },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
-        use: [
-          {
-            options: {
-              name: "fonts/[name].[ext]",
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [

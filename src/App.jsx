@@ -1,10 +1,23 @@
 import React from "react";
-import { Container, Header } from "./components";
+import {
+  AppContainer,
+  AppHeader,
+  TableBody,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "./components";
 
 const App = () => (
-  <Container>
-    <Header />
-  </Container>
+  <AppContainer>
+    <AppHeader />
+    <TableContainer>
+      <TableHead />
+      <TableBody>
+        <TableRow />
+      </TableBody>
+    </TableContainer>
+  </AppContainer>
 );
 
 export default App;

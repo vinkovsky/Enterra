@@ -1,9 +1,9 @@
 import React from "react";
-import "./Header.less";
+import "./AppHeader.less";
 
-const Header = () => {
+const AppHeader = () => {
   return (
-    <div className="header">
+    <div className="app-header">
       <span>Имя</span>
       <input type="text" />
       <div>
@@ -15,4 +15,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppHeader;
