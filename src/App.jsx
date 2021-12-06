@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.less";
+import { Container, Header } from "./components";
 
 const App = () => (
-  <div className="App">
-    <h1> Hello, WorldQ</h1>
-    <h1></h1>
-  </div>
+  <Container>
+    <Header />
+  </Container>
 );
 
 export default App;

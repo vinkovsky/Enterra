@@ -1,16 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
   mode: isDevelopment ? "development" : "production",
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
   resolve: {
     extensions: [".js", ".jsx"],
-    alias: { "@src": path.resolve(__dirname, "src") },
   },
   output: {
     path: path.resolve(__dirname, "release/"),
@@ -43,22 +40,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: "src/assets",
-    //       to: "assets",
-    //       globOptions: {
-    //         ignore: ["*.DS_Store"],
-    //       },
-    //     },
-    //   ],
-    // }),
-    // new CleanWebpackPlugin({
-    //   cleanOnceBeforeBuildPatterns: ["**/*"],
-    //   verbose: true,
-    //   dry: false,
-    // }),
     new HtmlWebpackPlugin({
       title: "Dev",
       template: "public/index.html",
@@ -66,7 +47,6 @@ module.exports = {
     }),
   ],
   devServer: {
-    open: true,
     compress: true,
     hot: true,
     port: 9000,
