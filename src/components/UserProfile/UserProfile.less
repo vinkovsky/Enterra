@@ -1,0 +1,38 @@
+.userprofile-container {
+  position: absolute;
+  top: calc(100vh / 2 - 140px);
+  left: calc(100vw / 2 - 200px);
+  z-index: 999;
+}
+
+.userprofile {
+  position: absolute;
+  div {
+    width: 400px;
+    height: 200px;
+    background-color: #f3f3f3;
+    border: 3px solid #4caf50;
+    padding: 20px;
+  }
+  button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    margin-top: 34px;
+  }
+}
+
+.star {
+  &:after {
+    content: "⭐️";
+    display: inline-block;
+    margin-right: 1em;
+  }
+}

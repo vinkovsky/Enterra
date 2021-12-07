@@ -4,3 +4,5 @@ export { default as TableContainer } from "./TableContainer";
 export { default as TableRow } from "./TableRow";
 export { default as TableBody } from "./TableBody";
 export { default as TableHead } from "./TableHead";
+export { default as UserProfile } from "./UserProfile";
+export { default as UserMenu } from "./UserMenu";

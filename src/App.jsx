@@ -7,6 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "./components";
+import "./App.less";
 
 const App = () => (
   <AppContainer>

@@ -12,7 +12,7 @@ const AppHeader = () => {
 
   const checkboxHandler = ({ target: { checked } }) => {
     const current = checked
-      ? [...store.current].filter((item) => !item.online)
+      ? store.current.filter((item) => !item.online)
       : store.initial;
 
     setStore({
@@ -24,7 +24,7 @@ const AppHeader = () => {
   const inputHandler = ({ target: { value } }) => {
     setValue(value);
 
-    const current = [...store.initial].filter((item) =>
+    const current = store.initial.filter((item) =>
       item.name.toLowerCase().includes(value)
     );
 

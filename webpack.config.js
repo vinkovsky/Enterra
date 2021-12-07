@@ -2,16 +2,16 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV !== "production";
+const mode = isDevelopment ? "development" : "production";
 
 module.exports = {
-  mode: isDevelopment ? "development" : "production",
+  mode,
   entry: "./src/index.jsx",
   resolve: {
     extensions: [".js", ".jsx"],
   },
   output: {
-    path: path.resolve(__dirname, "release/"),
-    publicPath: "/",
+    path: path.resolve(__dirname, "./release"),
     filename: "js/[name].[contenthash:8].bundle.js",
   },
   module: {
@@ -30,8 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Dev",
-      template: "public/index.html",
+      title: mode,
+      template: "./public/index.html",
       filename: "index.html",
     }),
   ],
